@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
+import {useForm} from 'react-hook-form';
 
 function CreateArea(props) {
 
   const [note, setNote] = useState({ title: "", content: "" });
   const [spreadState, setSpreadState] = useState(false);
+  const {register, handleSubmit} = useForm();
   
   function createNote(event) {
     const { name, value } = event.target;
@@ -22,9 +24,12 @@ function CreateArea(props) {
     setSpreadState(true);
   }
 
-  function addItemHandler(event) {
+  function addItemHandler(data, event) {
     event.preventDefault();
-    props.addItem(note);
+    const {title, content} = data;
+    if(title==note.title && content==note.content){
+      props.addItem(note);
+    }
     setNote({ title: "", content: "" });
   }
 
@@ -33,14 +38,16 @@ function CreateArea(props) {
       <form class="create-note">
         {
           spreadState && <input
+            {...register("title", {required: true})}
             name="title"
-            placeholder="Title"
+            placeholder="Title (MUST)"
             onChange={createNote}
             value={note.title}
           />
         }
 
         <textarea
+          {...register("content",{required: true})}
           name="content"
           placeholder="Take a note..."
           value={note.content}
@@ -49,7 +56,7 @@ function CreateArea(props) {
           rows={spreadState? 3 : 1}
         />
         <Zoom in={spreadState}>
-          <Fab onClick={addItemHandler}>
+          <Fab onClick={handleSubmit(addItemHandler)}>
             <AddCircleIcon fontSize="large"/>
           </Fab>
         </Zoom>
