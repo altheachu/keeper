@@ -3,9 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   background: #eee;
   padding: 0 16px;
@@ -35,6 +37,33 @@ footer {
 footer p {
   color: #ccc;
 }
+
+.navigator {
+  margin: 16px -16px;
+  height: 26px;
+}
+
+.navigator button {
+  background: #510cc9;
+  border: none;
+  border-radius: 10%;
+  height: 26px;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.navigator .link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 0 10px;
+  font-family: "McLaren", cursive;
+}
+
+.navigator .link:hover {
+  color: #f5ba13;
+}
+
 .note {
   background: #fff;
   border-radius: 7px;
@@ -44,10 +73,12 @@ footer p {
   margin: 16px;
   float: left;
 }
+
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
+
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
@@ -76,6 +107,7 @@ form.create-note {
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
+
 form.create-note input,
 form.create-note textarea {
   width: 100%;
@@ -86,6 +118,7 @@ form.create-note textarea {
   font-family: inherit;
   resize: none;
 }
+
 form.create-note button {
   position: absolute;
   right: 18px;
