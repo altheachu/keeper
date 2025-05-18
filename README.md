@@ -2,6 +2,9 @@
 cd first-app
 npm start -->
 
+# Purpose
+The project is forked from the course 'The Complete Full-Stack Web Development Bootcamp' maded by Angela Yu in Udemy. I update it from time to time if I learn something new about React.js. The project is for me to get familiar with the usage of React.js. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -14,6 +17,8 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+![UI screenshot](/public/img/screenshot.jpg "UI screenshot")
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

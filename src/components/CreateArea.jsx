@@ -47,7 +47,7 @@ function CreateArea(props) {
         }
 
         <textarea
-          {...register("content",{required: true})}
+          {...register("content",{required: false})}
           name="content"
           placeholder="Take a note..."
           value={note.content}
